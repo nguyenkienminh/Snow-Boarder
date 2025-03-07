@@ -435,7 +435,9 @@ public class PlayerController : MonoBehaviour
             {
                 sr.color = Color.white;
             }
-            yield return new WaitForSeconds(iFrameDuration / (numberOfFlash * 2));
+			spriteRenderers[1].color = ColorHelper.GetColorFromName(skateboardColor);
+
+			yield return new WaitForSeconds(iFrameDuration / (numberOfFlash * 2));
         }
 
         Physics2D.IgnoreLayerCollision(7, 8, false);
